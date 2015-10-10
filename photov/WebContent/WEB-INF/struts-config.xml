@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans >
+		<form-bean name="photoForm" type="net.wgbv.photov.form.PhotoForm">
+			<form-property name="siteName" type="java.lang.String" />
+			<form-property name="siteUrl" type="java.lang.String" />
+			<form-property name="topicName" type="java.lang.String" />
+			<form-property name="topicUrl" type="java.lang.String" />
+			<form-property name="categoryName" type="java.lang.String" />
+			<form-property name="categoryUrl" type="java.lang.String" />
+			<form-property name="headingName" type="java.lang.String" />
+			<form-property name="headingUrl" type="java.lang.String" />
+			<form-property name="filmName" type="java.lang.String" />
+			<form-property name="cameraName" type="java.lang.String" />
+			<form-property name="placeName" type="java.lang.String" />
+			<form-property name="placeCityName" type="java.lang.String" />
+			<form-property name="placeStateAbbr" type="java.lang.String" />
+			<form-property name="placeCountryAbbr" type="java.lang.String" />
+			<form-property name="photographerName" type="java.lang.String" />
+			<form-property name="people" type="java.util.ArrayList" />
+			<form-property name="photoId" type="int" />
+			<form-property name="photographerId" type="int" />
+			<form-property name="placeId" type="int" />
+			<form-property name="cameraId" type="int" />
+			<form-property name="topicId" type="int" />
+			<form-property name="categoryId" type="int" />
+			<form-property name="headingId" type="int" />
+			<form-property name="filmId" type="int" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="url" type="java.lang.String" />
+			<form-property name="thumbUrl" type="java.lang.String" />
+			<form-property name="siteId" type="int" />
+			<form-property name="vertical" type="boolean" />
+			<form-property name="privatePhoto" type="boolean" />
+			<form-property name="allPeople" type="boolean" />
+			<form-property name="date" type="java.lang.String" />
+			<form-property name="tstamp" type="java.lang.String" />
+			<form-property name="notes" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="loginForm" type="net.wgbv.photov.form.LoginForm">
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="topicForm" type="net.wgbv.photov.form.TopicForm">
+			<form-property name="topicId" type="int" />
+			<form-property name="topicDate" type="java.lang.String" />
+			<form-property name="topicName" type="java.lang.String" />
+			<form-property name="topicUrl" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="categoryForm" type="net.wgbv.photov.form.CategoryForm">
+			<form-property name="categoryName" type="java.lang.String" />
+			<form-property name="categoryDate" type="java.lang.String" />
+			<form-property name="categoryUrl" type="java.lang.String" />
+			<form-property name="categoryId" type="int" />
+			<form-property name="topicId" type="int" />
+			<form-property name="topics" type="java.util.ArrayList" />
+		</form-bean>
+		<form-bean name="headingForm" type="net.wgbv.photov.form.HeadingForm">
+			<form-property name="headingId" type="int" />
+			<form-property name="headingDate" type="java.lang.String" />
+			<form-property name="headingUrl" type="java.lang.String" />
+			<form-property name="headingName" type="java.lang.String" />
+			<form-property name="categories" type="java.util.ArrayList" />
+			<form-property name="categoryId" type="int" />
+			<form-property name="topics" type="java.util.ArrayList" />
+			<form-property name="topicId" type="int" />
+		</form-bean>
+		<form-bean name="personForm" type="net.wgbv.photov.form.PersonForm">
+			<form-property name="firstName" type="java.lang.String" />
+			<form-property name="middleName" type="java.lang.String" />
+			<form-property name="lastName" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="personId" type="int" />
+		</form-bean>
+		<form-bean name="peopleRankingForm" type="net.wgbv.photov.form.PeopleRankingForm" />
+		<form-bean name="peopleSearchForm" type="net.wgbv.photov.form.PeopleSearchForm">
+			<form-property name="searchString" type="java.lang.String" />
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="letters" type="java.util.ArrayList" />
+			<form-property name="allLetters" type="java.util.ArrayList" />
+		</form-bean>
+		<form-bean name="heirarchyForm" type="net.wgbv.photov.form.HeirarchyForm" />
+		<form-bean name="placeListForm" type="net.wgbv.photov.form.PlaceListForm">
+			<form-property name="placeList" type="java.util.ArrayList" />
+		</form-bean>
+		<form-bean name="placeForm" type="net.wgbv.photov.form.PlaceForm">
+			<form-property name="states" type="java.util.ArrayList" />
+			<form-property name="placeName" type="java.lang.String" />
+			<form-property name="countryId" type="int" />
+			<form-property name="countries" type="java.util.ArrayList" />
+			<form-property name="stateId" type="int" />
+			<form-property name="city" type="java.lang.String" />
+			<form-property name="placeId" type="int" />
+		</form-bean>
+		<form-bean name="stateForm" type="net.wgbv.photov.form.StateForm">
+			<form-property name="stateAbbr" type="java.lang.String" />
+			<form-property name="stateName" type="java.lang.String" />
+			<form-property name="countryId" type="int" />
+			<form-property name="stateId" type="int" />
+		</form-bean>
+		<form-bean name="countryForm" type="net.wgbv.photov.form.CountryForm">
+			<form-property name="countryName" type="java.lang.String" />
+			<form-property name="countryId" type="int" />
+			<form-property name="countryAbbr" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="photoChangeForm" type="net.wgbv.photov.form.PhotoChangeForm">
+			<form-property name="reason" type="java.lang.String" />
+			<form-property name="id" type="int" />
+		</form-bean>
+		<form-bean name="siteForm" type="net.wgbv.photov.form.SiteForm">
+			<form-property name="siteUrl" type="java.lang.String" />
+			<form-property name="siteId" type="int" />
+			<form-property name="siteName" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="groupForm" type="net.wgbv.photov.form.GroupForm">
+			<form-property name="groupId" type="int" />
+			<form-property name="groupDesc" type="java.lang.String" />
+			<form-property name="groupName" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="cameraForm" type="net.wgbv.photov.form.CameraForm">
+			<form-property name="cameraName" type="java.lang.String" />
+			<form-property name="cameraId" type="int" />
+		</form-bean>
+		<form-bean name="filmForm" type="net.wgbv.photov.form.FilmForm">
+			<form-property name="filmName" type="java.lang.String" />
+			<form-property name="filmId" type="int" />
+		</form-bean>
+		<form-bean name="userForm" type="net.wgbv.photov.form.UserForm">
+			<form-property name="active" type="boolean" />
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="groupId" type="int" />
+			<form-property name="update" type="boolean" />
+			<form-property name="userId" type="int" />
+			<form-property name="person" type="net.wgbv.photov.objects.Person" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="personId" type="int" />
+		</form-bean>
+		<form-bean name="registrationForm" type="net.wgbv.photov.form.RegistrationForm">
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="personId" type="int" />
+			<form-property name="people" type="java.util.ArrayList" />
+		</form-bean>
+		<form-bean name="bulkForm" type="net.wgbv.photov.form.BulkForm" />
+		<form-bean name="messageForm" type="net.wgbv.photov.form.MessageForm">
+			<form-property name="messageName" type="java.lang.String" />
+			<form-property name="messageId" type="int" />
+			<form-property name="messageText" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="newPhotoQueueForm" type="net.wgbv.photov.form.NewPhotoQueueForm">
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="photoId" type="int" />
+		</form-bean>
+		<form-bean name="auditQueueForm" type="net.wgbv.photov.form.AuditQueueForm" />
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards> 
+		<forward name="noUserForward" path="/login.do" > </forward>
+		<forward name="listForward" path="/list.do" > </forward>
+	</global-forwards>
+	<action-mappings >
+		<action
+			attribute="photoForm"
+			input="/form/photo.jsp"
+			name="photoForm"
+			path="/photo"
+			type="net.wgbv.photov.action.PhotoAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="photoEditForward" path="/form/photoEdit.jsp" /> 
+			<forward  name="photoChangeForward" path="/photoChange.do" />
+		</action>
+		<action
+			path="/list"
+			type="net.wgbv.photov.action.ListAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="topicForward" path="/form/topic.jsp" > </forward>
+			<forward  name="categoryForward" path="/form/category.jsp" > </forward>
+			<forward  name="headingForward" path="/form/heading.jsp" > </forward>
+			<forward  name="headingDetailForward" path="/form/headingDetail.jsp" > </forward>
+			<forward  name="photoForward" path="/form/photo.jsp" > </forward>
+			<forward  name="personForward" path="/form/person.jsp" > </forward>
+			<forward  name="placeForward" path="/form/place.jsp" > </forward>
+			<forward  name="siteForward" path="/form/site.jsp" > </forward>
+			<forward  name="groupForward" path="/form/group.jsp" > </forward>
+			<forward  name="cameraForward" path="/form/camera.jsp" > </forward>
+			<forward  name="filmForward" path="/form/film.jsp" > </forward>
+			<forward  name="userForward" path="/form/user.jsp" > </forward>
+			<forward  name="messageForward" path="/form/message.jsp" > </forward>
+			</action>
+		<action
+			attribute="loginForm"
+			input="/form/login.jsp"
+			name="loginForm"
+			path="/login"
+			type="net.wgbv.photov.action.LoginAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="successForward" path="/list.do" > </forward>
+			</action>
+		<action
+			attribute="topicForm"
+			input="/form/topic.jsp"
+			name="topicForm"
+			path="/topic"
+			type="net.wgbv.photov.action.TopicAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="successForward" path="/list.do" > </forward>
+			<forward  name="topicEditForward" path="/form/topicEdit.jsp" > </forward>
+			
+			</action>
+		<action
+			attribute="categoryForm"
+			input="/form/category.jsp"
+			name="categoryForm"
+			path="/category"
+			type="net.wgbv.photov.action.CategoryAction"
+			unknown="false"
+			validate="true">
+			<forward name="successForward" path="/list.do" />
+			<forward name="categoryEditForward" path="/form/categoryEdit.jsp" />
+			
+		</action>
+		<action
+			attribute="headingForm"
+			input="/form/heading.jsp"
+			name="headingForm"
+			path="/heading"
+			type="net.wgbv.photov.action.HeadingAction"
+			unknown="false"
+			validate="true">
+			<forward name="headingEditForward" path="/form/headingEdit.jsp" />
+			<forward name="successForward" path="list.do" />
+		</action>
+		<action
+			attribute="personForm"
+			input="/form/person.jsp"
+			name="personForm"
+			path="/person"
+			type="net.wgbv.photov.action.PersonAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="personEditForward" path="/form/personEdit.jsp" />
+			</action>
+		<action
+			attribute="peopleRankingForm"
+			input="/form/peopleRanking.jsp"
+			name="peopleRankingForm"
+			path="/peopleRanking"
+			type="net.wgbv.photov.action.PeopleRankingAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="peopleRankingForward" path="/form/peopleRanking.jsp" />
+			</action>
+		<action
+			attribute="peopleSearchForm"
+			input="/form/peopleSearch.jsp"
+			name="peopleSearchForm"
+			path="/peopleSearch"
+			type="net.wgbv.photov.action.PeopleSearchAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="peopleSearchForward" path="/form/peopleSearch.jsp" />
+			<forward  name="peopleWithForward" path="/form/peopleWith.jsp" />
+			
+			</action>
+		<action
+			attribute="heirarchyForm"
+			input="/form/heirarchy.jsp"
+			name="heirarchyForm"
+			path="/heirarchy"
+			type="net.wgbv.photov.action.HeirarchyAction"
+			unknown="false"
+			validate="true">
+			<forward  name="heirarchyForward" path="/form/heirarchy.jsp" />
+			</action>
+		<action
+			attribute="placeListForm"
+			input="/form/placeList.jsp"
+			name="placeListForm"
+			path="/placeList"
+			type="net.wgbv.photov.action.PlaceListAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="placeListForward" path="/form/placeList.jsp" />
+			</action>
+		<action
+			attribute="placeForm"
+			input="/form/placeEdit.jsp"
+			name="placeForm"
+			path="/place"
+			type="net.wgbv.photov.action.PlaceAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="placeEditForward" path="/form/placeEdit.jsp" />
+			</action>
+		<action
+			attribute="stateForm"
+			input="/form/state.jsp"
+			name="stateForm"
+			path="/state"
+			type="net.wgbv.photov.action.StateAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="stateEditForward" path="/form/stateEdit.jsp" />
+			</action>
+		<action
+			attribute="countryForm"
+			input="/form/country.jsp"
+			name="countryForm"
+			path="/country"
+			type="net.wgbv.photov.action.CountryAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="countryEditForward" path="/form/countryEdit.jsp" />
+			</action>
+		<action
+			attribute="siteForm"
+			input="/form/site.jsp"
+			name="siteForm"
+			path="/site"
+			type="net.wgbv.photov.action.SiteAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="siteEditForward" path="/form/siteEdit.jsp" />
+			</action>
+		<action
+			attribute="groupForm"
+			input="/form/group.jsp"
+			name="groupForm"
+			path="/group"
+			type="net.wgbv.photov.action.GroupAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="groupEditForward" path="/form/groupEdit.jsp" />
+			</action>
+		<action
+			attribute="cameraForm"
+			input="/form/camera.jsp"
+			name="cameraForm"
+			path="/camera"
+			type="net.wgbv.photov.action.CameraAction"
+			unknown="false"
+			validate="true" >
+			<forward  name="cameraEditForward" path="/form/cameraEdit.jsp" />
+			</action>
+		<action
+			attribute="filmForm"
+			input="/form/film.jsp"
+			name="filmForm"
+			path="/film"
+			type="net.wgbv.photov.action.FilmAction"
+			unknown="false"
+			validate="true">
+			<forward name="filmEditForward" path="/form/filmEdit.jsp" />
+		</action>
+		<action
+			attribute="userForm"
+			input="/form/userEdit.jsp"
+			name="userForm"
+			path="/user"
+			type="net.wgbv.photov.action.UserAction"
+			unknown="false"
+			validate="true">
+			<forward name="userEditForward" path="/form/userEdit.jsp" />
+		</action>
+		<action
+			attribute="registrationForm"
+			input="/form/registration.jsp"
+			name="registrationForm"
+			path="/registration"
+			type="net.wgbv.photov.action.RegistrationAction"
+			unknown="false"
+			validate="true">
+			<forward name="registrationForward" path="/form/registration.jsp" />
+		</action>
+		<action
+			attribute="bulkForm"
+			input="/form/bulk.jsp"
+			name="bulkForm"
+			path="/bulk"
+			type="net.wgbv.photov.action.BulkAction"
+			unknown="false"
+			validate="true" >
+			<forward name="bulkForward" path="/form/bulk.jsp" />
+		</action>
+		<action
+			attribute="messageForm"
+			input="/form/messageEdit.jsp"
+			name="messageForm"
+			path="/message"
+			type="net.wgbv.photov.action.MessageAction"
+			unknown="false"
+			validate="true">
+			<forward name="messageEditForward" path="/form/messageEdit.jsp" />
+		</action>
+		<action
+			attribute="newPhotoQueueForm"
+			input="/form/newPhotoQueue.jsp"
+			name="newPhotoQueueForm"
+			path="/newPhotoQueue"
+			type="net.wgbv.photov.action.NewPhotoQueueAction"
+			unknown="false"
+			validate="true" >
+			<forward name="newPhotoQueueForward" path="/form/newPhotoQueue.jsp" />
+			</action>
+		<action
+			attribute="photoChangeForm"
+			input="/form/photoChange.jsp"
+			name="photoChangeForm"
+			path="/photoChange"
+			type="net.wgbv.photov.action.PhotoChangeAction"
+			unknown="false"
+			validate="true" >
+			<forward name="photoChangeForward" path="/form/photoChange.jsp" />
+			</action>
+		<action
+			attribute="auditQueueForm"
+			input="/form/auditQueue.jsp"
+			name="auditQueueForm"
+			path="/auditQueue"
+			type="net.wgbv.photov.action.AuditQueueAction"
+			unknown="false"
+			validate="true">
+			<forward name="auditQueueForward" path="/form/auditQueue.jsp" />
+		</action>
+	</action-mappings>
+
+	<controller
+		bufferSize="4096"
+		debug="0"
+		locale="false"
+		nocache="false"
+		inputForward="false" />
+	<message-resources null="true" parameter="net.wgbv.photov.ApplicationResources" />
+</struts-config>
+

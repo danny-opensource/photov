@@ -1,0 +1,31 @@
+log4j.rootLogger=OFF, stdout
+log4j.rootLogger.additivity=false
+log4j.logger.net=INFO, stdout
+log4j.logger.net.additivity=false
+log4j.logger.mail=FATAL, mailApp
+log4j.logger.mail.additivity=false
+log4j.logger.audit=INFO, auditApp
+log4j.logger.audit.additivity=false
+
+log4j.appender.stdout=org.apache.log4j.RollingFileAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%5p [%d{dd MM yyyy HH:mm:ss,SSS}] (%F:%L) - %m%n
+log4j.appender.stdout.File=C:/photov/photov.log
+log4j.appender.stdout.MaxFileSize=100KB
+log4j.appender.stdout.MaxBackupIndex=2
+
+log4j.appender.auditApp=org.apache.log4j.RollingFileAppender
+log4j.appender.auditApp.layout=org.apache.log4j.PatternLayout
+log4j.appender.auditApp.layout.ConversionPattern=%5p [%d{dd MM yyyy HH:mm:ss,SSS}] (%F:%L) - %m%n
+log4j.appender.auditApp.File=C:/photov/photov.audit.log
+log4j.appender.auditApp.MaxFileSize=100KB
+log4j.appender.auditApp.MaxBackupIndex=2
+
+log4j.appender.mailApp=org.apache.log4j.net.SMTPAppender
+log4j.appender.mailApp.layout=org.apache.log4j.HTMLLayout
+log4j.appender.mailApp.Threshold=FATAL
+log4j.appender.mailApp.SMTPHost=localhost
+log4j.appender.mailApp.bufferSize=1
+log4j.appender.mailApp.to=administrator@wgbv.com
+log4j.appender.mailApp.from=administrator@wgbv.com
+log4j.appender.mailApp.subject=wgbv.com Fatal Error
