@@ -60,12 +60,12 @@ strHtmlTitle += " - People Ranking ";
 			<br>
 			<bean:define id="pgOne" name="peoples" property="pageOne"  />
 			<bean:define id="pgTwo" name="peoples" property="pageTwo"  />
-<%	if (index.compareTo(pgOne) == 0){ %>			
+<%	if (index.compareTo((Integer) pgOne) == 0){ %>			
 		</div>
 		</td>
 		<td valign="top">
 		<div align="left">
-<%	} else if (index.compareTo(pgTwo) == 0) { 	%>
+<%	} else if (index.compareTo((Integer) pgTwo) == 0) { 	%>
 		</div>
 		</td>
 		<td valign="top">

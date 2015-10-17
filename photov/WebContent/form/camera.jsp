@@ -1,6 +1,6 @@
 <%@ include file="/common/version.jsp"%>
 <%@ include file="/common/preHead.jsp"%>
-<bean:define id="tName" name="headingForm" property="headingName" />
+
 <%
 strHtmlTitle += " - Camera List ";
 %>
