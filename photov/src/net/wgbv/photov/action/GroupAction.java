@@ -3,9 +3,12 @@
 
 package net.wgbv.photov.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.wgbv.photov.dam.OtherFactory;
 import net.wgbv.photov.dam.UserFactory;
 import net.wgbv.photov.form.GroupForm;
 import net.wgbv.photov.objects.User;
@@ -81,7 +84,8 @@ public class GroupAction extends Action {
 			strForward = Constants.NO_USER_FORWARD;
 
 		}
-
+		groupForm.setAllUsers((ArrayList) UserFactory.getAllUsers());
+		groupForm.setSelectedUsers((ArrayList) UserFactory.getAllUsers());
 		request.getSession().setAttribute(Constants.USER_KEY, user);
 
 		return (mapping.findForward(strForward));
