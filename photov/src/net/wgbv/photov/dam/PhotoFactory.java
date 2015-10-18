@@ -308,8 +308,12 @@ public class PhotoFactory {
 			query = "SELECT " + " photo_id " + " FROM " + " photo " + " WHERE " + " url = '" + pf.getUrl() + "'" + " ORDER BY photo_id DESC ";
 			rs = stmt.executeQuery(query);
 			if (rs != null) {
-				while (rs.next()) {
-					pf.setPeopleId(rs.getInt("photo_id"));
+				//Edit by swapnil - chnaged while to if so that only 1 id i.e. latest is fetched and assigned. 
+				//This method is called only one place to retrieve the photoId as soon as an entry is made in the photo table.
+				if (rs.next()) {
+					//pf.setPeopleId(rs.getInt("photo_id")); Commented by Swapnil
+					//Adding code - swapnil
+					pf.setPhotoId(rs.getInt("photo_id"));
 				}
 			}
 			PhotoFactory.closeConn(rs, stmt, conn);
@@ -692,9 +696,10 @@ public class PhotoFactory {
 	}
 
 	public static String getUserWhere(User user) {
-		StringBuffer sb = new StringBuffer(" AND ");
+		StringBuffer sb = new StringBuffer("");
 
 		if (user != null) {
+			sb.append(" AND ");
 			ArrayList coll = new ArrayList();
 			coll = user.getGroups();
 			if (coll.size() > 0) {

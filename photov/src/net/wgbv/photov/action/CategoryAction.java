@@ -3,6 +3,8 @@
 
 package net.wgbv.photov.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -50,6 +52,7 @@ public class CategoryAction extends Action {
 		if (request.getSession().getAttribute(Constants.USER_KEY) != null) {
 			user = (User) request.getSession().getAttribute(Constants.USER_KEY);
 		}
+		categoryForm.setTopics((ArrayList)OtherFactory.getAllTopics());
 		if ((user != null) && (user.getCanUpdate())) {
 			if ((categoryForm.getCategoryName() == null)
 				|| (categoryForm.getCategoryUrl() == null)
@@ -65,6 +68,7 @@ public class CategoryAction extends Action {
 				categoryForm.reset(mapping, request);
 			} else {
 				OtherFactory.setCategoryForm(categoryForm);
+				
 			}
 		} else {
 			// User can't do this, just kick them back to the start page
