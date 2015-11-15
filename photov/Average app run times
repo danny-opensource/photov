@@ -1,0 +1,4 @@
+1. site.jsp:546 msec
+2. login.do: 109 msec
+3. insert country: 239 msec
+4. insert photo: 481msec
