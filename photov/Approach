@@ -1,0 +1,4 @@
+1. We set the ramp up to 50000. Total users as 10,000. i.e, each user hits the server at an interval of 5 sec.
+2. We initially set the CPU% to 90% and recorded the throughput. We repeated by changing to 80%, 60% and 30% and recorded the throughput.
+3. We then changed the ramp up to 40000. Total users 10000. Repeated the same and recorded the throughput.
+4.Repeat by changing ramp up to 30000, 20000, 10000. Observe the variation of throughput
